@@ -168,6 +168,9 @@ class RtmpSender(
         }
       }
     }
+    job?.invokeOnCompletion { 
+      Log.e("Pedro", "error", it)
+    }
   }
 
   suspend fun stop(clear: Boolean = true) {
